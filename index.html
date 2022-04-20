@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <title>Clock</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        width: 100vw;
+      }
+
+      #app {
+        height: 100vh;
+        width: 100vw;
+        background-image: url(https://images.unsplash.com/photo-1586902197503-e71026292412?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #clock {
+        font-size: 80px;
+        color: white;
+        text-shadow: 3px 3px 5px #333;
+        font-family: sans-serif;
+      }
+
+      .iconify {
+        font-size: 80px;
+        color: white;
+        filter: drop-shadow(3px 3px 5px #333);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <span class="iconify" data-icon="ph:clock-bold"></span>
+      <h1 id="clock"></h1>
+    </div>
+
+    <script>
+      setInterval(() => {
+        const time = new Date().toLocaleTimeString("pt-BR");
+        const clock = document.getElementById("clock");
+        clock.innerText = time;
+      }, 100);
+    </script>
+  </body>
+</html>
